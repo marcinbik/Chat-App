@@ -14,7 +14,7 @@ const io = socketIO(server);
 io.on("connect", (socket) => {
   console.log("We heve a new connection!");
 
-  socket.on("join", ({ name, room }, callback) => {
+  socket.on("join", ({ name, room, }, callback) => {
     const { error, user } = addUser({ id: socket.id, name, room });
     if (error) return callback(error);
 

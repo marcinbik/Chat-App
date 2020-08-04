@@ -1,6 +1,6 @@
 const users = [] ;
 
-const addUser = ( {id, name, room }) => {
+const addUser = ( {id, name, room ,passsword }) => {
   name = name.trim().toLowerCase();
   room = room.trim().toLowerCase();
 
@@ -12,10 +12,12 @@ const addUser = ( {id, name, room }) => {
     return { error: "Username is taken" };
   }
 
-  const user = { id, name, room };
+  const user = { id, name, room,passsword };
   users.push(user);
   return { user };
 };
+
+
 
 const removeUser = (id) => {
   const index = users.findIndex((user) => user.id === id);
@@ -33,4 +35,4 @@ const getUserInRoom = (room) => (
 );
 
 
-module.exports = { addUser, removeUser, getUser, getUserInRoom };
+module.exports = { addUser, removeUser, getUser, getUserInRoom,  };
